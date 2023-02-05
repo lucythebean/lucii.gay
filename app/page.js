@@ -1,8 +1,14 @@
 import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from './page.module.css'
+import Link from 'next/link'
+import redirect from 'public/redir'
 
 const inter = Inter({ subsets: ['latin'] })
+
+function redirect(){
+  window.location.href= "localhost:3000/search"
+}
 
 export default function Home() {
   return (
@@ -72,19 +78,20 @@ export default function Home() {
           <p className={inter.className}>Explore the Next.js 13 playground.</p>
         </a>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+        <div
           className={styles.card}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={redirect}
+          redir='search'
         >
           <h2 className={inter.className}>
-            Deploy <span>-&gt;</span>
+            /Search <span>-&gt;</span>
           </h2>
           <p className={inter.className}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
+            Go to the search page, thats where the cool girls are!!
           </p>
-        </a>
+        </div>
       </div>
     </main>
   )
