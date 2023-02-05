@@ -9,6 +9,7 @@
   z-index: 2;
   --border-rgb: #5931eb;
   --button-colour: #ffffff;
+  --button-focus-colour: #e2afff;
   font-family: var(--font-mono);
 }
 .main h1{
@@ -47,6 +48,10 @@
   border-radius: 8px;
   width: 25%;
 }
+.main input:focus{
+  background-color: #c5fdff;
+  transition: 0.2s;
+}
 
 .main button {
   position: relative;
@@ -60,6 +65,10 @@
   border: 2px solid var(--border-rgb);
   border-radius: 5px;
   background-color: var(--button-colour);
+}
+.main button:hover{
+  background-color: var(--button-focus-colour);
+  transition: 0.5s;
 }
 
 .code {
