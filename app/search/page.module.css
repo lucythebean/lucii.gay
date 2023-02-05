@@ -1,7 +1,4 @@
-root{
-  --border-rgb: #5931eb;
-  --button-colour: #ffffff;
-}
+
 .main {
   display: inherit;
   justify-content: inherit;
@@ -10,6 +7,8 @@ root{
   max-width: var(--max-width);
   width: 100%;
   z-index: 2;
+  --border-rgb: #5931eb;
+  --button-colour: #ffffff;
   font-family: var(--font-mono);
 }
 .main h1{
