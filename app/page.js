@@ -6,10 +6,6 @@ import redirect from 'public/redir'
 
 const inter = Inter({ subsets: ['latin'] })
 
-function redirect(){
-  window.location.href= "localhost:3000/search"
-}
-
 export default function Home() {
   return (
     <main className={styles.main}>
