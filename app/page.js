@@ -74,12 +74,10 @@ export default function Home() {
           <p className={inter.className}>Explore the Next.js 13 playground.</p>
         </a>
 
-        <div
+        <Link
+          href="./search"
           className={styles.card}
-          target="_blank"
           rel="noopener noreferrer"
-          onClick={redirect}
-          redir='search'
         >
           <h2 className={inter.className}>
             /Search <span>-&gt;</span>
@@ -87,7 +85,7 @@ export default function Home() {
           <p className={inter.className}>
             Go to the search page, thats where the cool girls are!!
           </p>
-        </div>
+        </Link>
       </div>
     </main>
   )

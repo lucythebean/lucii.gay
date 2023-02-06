@@ -15,6 +15,7 @@
     "dangerously-set-html-content": "^1.0.13",
     "eslint": "8.33.0",
     "eslint-config-next": "13.1.6",
+    "genshin-db": "^4.3.5",
     "helmet": "^6.0.1",
     "jquery": "^3.6.3",
     "jsdom": "^21.1.0",
