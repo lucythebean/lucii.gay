@@ -15,14 +15,14 @@ export default function searchForm() {
                 query: query
             };
 
-            const response = await fetch("/api/results",{
+            const response = await fetch("/api/searchGenshin",{
                 method: "POST",
                 body: JSON.stringify(data),
             })
             return response.json()
         }
         postData().then((data) =>{
-            alert(data.message)
+            alert(data)
         })
     }
     return(   
