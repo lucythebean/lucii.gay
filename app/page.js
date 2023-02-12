@@ -2,90 +2,34 @@ import Image from 'next/image'
 import { Inter } from '@next/font/google'
 import styles from './page.module.css'
 import Link from 'next/link'
-import redirect from 'public/redir'
+
+import yupee from "../public/yupeeee.png"
 
 const inter = Inter({ subsets: ['latin'] })
 
 export default function Home() {
   return (
     <main className={styles.main}>
+      <div className={styles.header}><h1>Epic Swag homepage title</h1></div>
       <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>./page.js</code>
-        </p>
+      <Image src={yupee} width={300} height={462} alt="A crudely drawn cat raising one eyebrow at viewer with a trans flag in the background"/>
+      <p>A whole big chunk of text, a funky one if you will, lorem ipsum verde, a duck walked up to a lemonade stand and she said to the man, running the stand, hey! bababa, got any grapes? the man said no, we just sell lemonade, if you want grapes theres load at the store. the duck said idk i forgor and he waddled away wadddle waddle lorem ipsum verde avada kadavera ecetera overwatch winton bingled (:3) gayge testing 2 testing 3 testing 1(prequel) now i add more text to it because i need to test however down it goes and if its going to scale well with more word pog</p>
+      </div>
+      <div className={styles.grid}>
         <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
+          <a href='/search'>
+          <h2>Search</h2>
+          <p>Parse yourself some Genshin api (Work in progress lol)</p>
           </a>
         </div>
-      </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-        <div className={styles.thirteen}>
-          <Image src="/thirteen.svg" alt="13" width={40} height={31} priority />
+        <div>
+          <h2>More testing</h2>
+          <p> ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo</p>
         </div>
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://beta.nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <Link
-          href="./search"
-          className={styles.card}
-          rel="noopener noreferrer"
-        >
-          <h2 className={inter.className}>
-            /Search <span>-&gt;</span>
-          </h2>
-          <p className={inter.className}>
-            Go to the search page, thats where the cool girls are!!
-          </p>
-        </Link>
+        <div>
+          <h2>Header 3 test</h2>
+          <p>Span test (lie)</p>
+        </div>
       </div>
     </main>
   )
