@@ -1,5 +1,4 @@
 import './globals.css'
-import { AnalyticsWrapper } from 'public/analytics'
 
 export default function RootLayout({ children }) {
   return (
@@ -9,10 +8,7 @@ export default function RootLayout({ children }) {
         head.js. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body>
-        {children}
-        <AnalyticsWrapper />
-      </body>
+      <body>{children}</body>
     </html>
   )
 }
