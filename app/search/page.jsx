@@ -22,15 +22,14 @@ export default function searchForm() {
             return response.json()
         }
         postData().then((data) =>{
-            alert(JSON.stringify(data))}
-            )
+            alert(data)
+        })
     }
     return(   
     <>
     <div className={styles.main}>
         <form onSubmit={search}>
             <h1 className={styles.header}>Search a thing</h1>
-            <div className={styles.searchFields}>
                 <input
                     type="text"
                     placeholder="Folder"
@@ -42,10 +41,8 @@ export default function searchForm() {
                     value={query}
                     onChange={(e) => setQuery(e.target.value)} /> <br />
             <button type='submit'>Submit search</button>
-            </div>
-        </form>
-        <h1>STILL WORKING ON THIS ONE :3</h1>
-    </div>
-    </>
+            </form>
+        </div>
+        </>
     );
 }
