@@ -1,24 +1,69 @@
-
 .main {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 16px;
+  display: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  font-size: 0.85rem;
+  max-width: var(--max-width);
   width: 100%;
+  z-index: 2;
   font-family: var(--font-mono);
 }
-.header {
-  display: inherit;
-  justify-content: center;
-  border-bottom: 5px solid var(--border-rgb);
-  padding-bottom: 0.5rem;
-  margin-bottom: 0.5rem;
-  font-weight: bolder;
+.main h1{
+  width: 100%;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-weight: 900;
+  word-spacing: -5px;
+  position: relative;
 }
-.searchFields input{
-  font-size: inherit;
+
+.main a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.main p {
+  position: relative;
+  margin: 0;
   padding: 1rem;
-  border: var(--border-rgb);
+  background-color: rgba(var(--callout-rgb), 0.5);
+  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
   border-radius: var(--border-radius);
-  color: var(--foreground-rgb);
+}
+.main input{
+  position: relative;
+  padding: 1ch;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 14px;
+  border: 2px solid var(--border-rgb);
+  border-radius: 8px;
+  width: 25%;
+}
+.main input:focus{
+  background-color: #c5fdff;
+  transition: 0.2s;
+}
+
+
+.main button {
+  position: relative;
+  width: 25%;
+  padding: 0.2rem;
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 15px;
+  border: 2px solid var(--border-rgb);
+  border-radius: 5px;
+  background-color: var(--button-colour);
+}
+.main button:hover{
+  background-color: var(--button-focus-colour);
+  transition: 0.5s;
 }

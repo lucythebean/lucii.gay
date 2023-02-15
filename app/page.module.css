@@ -17,54 +17,42 @@
 }
 
 .description {
-  display: inherit;
-  align-items: inherit;
+  display: flex;
   max-width: 50%;
   z-index: 2;
   font-family: var(--font-mono);
   border-bottom: 5px solid var(--border-rgb);
   margin-bottom: 5px;
-}
-
-
-.description a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
+  font-size: 16px;
 }
 
 .description p {
   box-sizing: border-box;
   position: relative;
   align-self: self-start;
-  margin: 0.5rem;
   padding: 1rem;
   background-color: rgba(238, 240, 241, 0.5);
   border: 1px solid rgba(172, 175, 175, 0.3);
   border-radius: var(--border-radius);
-  font-size: 16px;
-  max-width: 33%;
+  min-width: 66%;
+  
 }
 
 .description img {
-  align-self: flex-start ;
   border-radius: var(--border-radius);
   position: relative;
   margin: 0.5rem;
+  min-width: 33%;
   height: auto;
-  width: 50%;
-  max-width: 300px;
-  max-height: 462px;
 }
-
 
 .grid {
   width: var(--max-width);
-  min-width: 960px;
+  min-width: 50%;
   display: table;
   border-spacing: 0.5rem;
   box-sizing: border-box;
+  table-layout: fixed;
 
 }
 
@@ -76,11 +64,20 @@
   background: var(--card-rgb);
   border: 5px solid var(--card-border-rgb);
   transition: 200ms;
+  min-width: 33%;
 }
 
 .grid div:hover{
   background: var(--card-rgb-hover);
   border: 5px solid var(--card-border-rgb-hover);
+}
+
+.grid div:focus::before{
+  background: var(--card-rgb-hover);
+  border: 5px solid var(--card-border-rgb-hover);
+}
+.grid div::before{
+  pointer-events: none;
 }
 
 .grid h2 {
@@ -92,6 +89,114 @@
   margin: 0;
   opacity: 0.6;
   font-size: 0.9rem;
-  max-width: 34ch;
   word-wrap: break-word;
+}
+
+/* The point where the default layout's text box is longer then the picture */
+@media screen and (max-width:950px){
+  .header {
+    width: 80%;
+    display: inherit;
+    justify-content: center;
+    border-bottom: 5px solid var(--border-rgb);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-weight: bolder;
+    font-size: 16px;
+  }
+
+  .description {
+    display: block;
+    min-width: 80%;
+    background-color: rgba(238, 240, 241, 0.5);
+    border: 1px solid rgba(172, 175, 175, 0.3);
+    border-radius: var(--border-radius);
+  }
+
+  .description img {
+    box-sizing: content-box;
+    border-radius: var(--border-radius);
+    position: relative;
+    float: left;
+    min-width: 33vw;
+    max-width: 33vw;
+    height: auto;
+    margin: 0.5rem;
+  }
+
+  .description p{
+    float: none;
+    box-sizing: border-box;
+    position: relative;
+    align-self: flex-start;
+    margin: 0.5rem;
+    padding: 1rem;
+    min-width: 80%;
+    background-color: unset;
+    border: 0;
+    border-radius: 0;
+  }
+}
+
+@media screen and (max-width: 950px) and (min-width: 629px){
+  .grid {
+    display: inline-table;
+    table-layout: fixed;
+    border-spacing: 0.5rem;
+    box-sizing: border-box;
+    width: 80%;
+  } 
+  .grid div{
+    display: table-cell;
+    position: relative;
+    box-sizing: inherit;
+    padding: 0.5rem 0.7rem;
+    transition: 200ms;
+    min-width: unset;
+    width: 100%;
+  }
+  .grid h2{
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 630px){
+  .grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-spacing: 0.5rem;
+    box-sizing: border-box;
+    max-width: 80%;
+  } 
+  .grid div{
+    margin: 0.2rem;
+    position: relative;
+    box-sizing: inherit;
+    padding: 0.5rem 0.7rem;
+    border-radius: var(--border-radius);
+    background: var(--card-rgb);
+    border: 5px solid var(--card-border-rgb);
+    transition: 200ms;
+    min-width: unset;
+  }
+}
+
+@media screen and (min-width: 900px){
+  .description img{
+    height: unset;
+    max-height: 50%;
+  }
+}
+
+@media screen and (max-width: 780px){
+  .grid{
+    font-size: 10px;
+  }
+
+  .description p{
+    font-size: 14px;
+    padding: 0.5rem;
+    padding-bottom: 0rem;
+  }
 }
