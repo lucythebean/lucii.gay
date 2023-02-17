@@ -24,7 +24,7 @@ export default function searchForm(){
             return response.json()
         }
         postData().then((data) =>{
-            alert(JSON.stringify(data))}
+            alert(parse(JSON.stringify(data)))}
             )
     }
     return(   
