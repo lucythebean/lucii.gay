@@ -3,8 +3,10 @@
 import { useState } from "react"
 import React from "react";
 import styles from './page.module.css'
+import Link from 'next/link';
 
-export default function searchForm() {
+
+export default function searchForm(){
     const [folder, setFolder] = useState('');
     const [query, setQuery] = useState('');
     function search(e) {
@@ -41,10 +43,13 @@ export default function searchForm() {
                     placeholder="Query"
                     value={query}
                     onChange={(e) => setQuery(e.target.value)} /> <br />
-            <button type='submit'>Submit search</button>
+            <button type='submit'>Submit search</button> <br/>
             </div>
         </form>
+        <div>
         <h1>STILL WORKING ON THIS ONE :3</h1>
+        <Link href='/'><button>Back to homepage!</button></Link>
+        </div>
     </div>
     </>
     );

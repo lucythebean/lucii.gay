@@ -18,13 +18,6 @@
   position: relative;
 }
 
-.main a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
 .main p {
   position: relative;
   margin: 0;
@@ -48,7 +41,6 @@
   background-color: #c5fdff;
   transition: 0.2s;
 }
-
 
 .main button {
   position: relative;
