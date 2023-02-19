@@ -4,7 +4,7 @@ import { useState } from "react"
 import React from "react";
 import styles from './page.module.css'
 import Link from 'next/link';
-import parse from './parse';
+import parse from './public/parse';
 
 
 export default function searchForm(){
