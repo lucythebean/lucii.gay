@@ -4,7 +4,6 @@ import { useState } from "react"
 import React from "react";
 import styles from './page.module.css'
 import Link from 'next/link';
-import parse from 'public/parse.js';
 
 
 export default function searchForm(){
@@ -25,7 +24,7 @@ export default function searchForm(){
             return response.json()
         }
         postData().then((data) =>{
-            alert(parse(JSON.stringify(data)))}
+            alert(JSON.stringify(data))}
             )
     }
     return(   
