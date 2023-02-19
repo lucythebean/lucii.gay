@@ -1,12 +1,24 @@
 /* Parse a json */
 
-export default function parse(data) {
-    var display = []
-    var x = JSON.parse(data)
-    var keys = Object.keys(JSON.parse(data))
-    console.log(`keys?: ${Object.keys(JSON.parse(data))}`)
-    for (i in keys){
-        console.log(`x[key[i]]: ${x[keys[i]]}`)
-        display.push(`${keys[i]}: ${x[keys[i]]}`)};
-    return(display);
-};
+export function getPath(obj) {
+  var keys = [];
+  for (var key in obj) {
+    keys.push(key);
+    if (typeof obj[key] === "object") {
+      var subkeys = getPath(obj[key]);
+      keys = keys.concat(
+        subkeys.map(function (subkey) {
+          return key + "." + subkey;
+        })
+      );
+    }
+  }
+  return keys;
+}
+
+export function getKeys(obj){
+  var keys =[];
+  for (Object.keys(obj).length in obj){
+    
+  }
+}

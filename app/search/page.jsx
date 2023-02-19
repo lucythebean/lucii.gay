@@ -5,7 +5,6 @@ import React from "react";
 import styles from './page.module.css'
 import Link from 'next/link';
 
-
 export default function searchForm(){
     const [folder, setFolder] = useState('');
     const [query, setQuery] = useState('');
@@ -24,7 +23,8 @@ export default function searchForm(){
             return response.json()
         }
         postData().then((data) =>{
-            alert(parse(JSON.stringify(data)))}
+            console.log("data.paths: "+JSON.stringify(data.paths))
+            alert(JSON.stringify(data.genshin))}
             )
     }
     return(   
