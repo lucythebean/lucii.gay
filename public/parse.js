@@ -1,35 +1,5 @@
 /* Parse a json */
 
-export function getPath(obj) {
-  var keys = [];
-  for (var key in obj) {
-    keys.push(key);
-    if (typeof obj[key] !== "string") {
-      var subkeys = getPath(obj[key]);
-      keys = keys.concat(
-        subkeys.map(function (subkey) {
-          return key + "." + subkey;
-        })
-      );
-    }
-  }
-  console.log("keys: " + Object.keys(obj));
-  return keys;
-}
-
-export function getKeys(obj) {
-  var keys = [];
-  var keyList = Object.keys(obj);
-  console.log("keylist: " + keyList);
-  for (key in keyList) {
-    console.log("key: " + keyList[key]);
-    keys.push(Object.keys(obj[key]));
-    console.log("keys: " + Object.keys(obj[key]));
-  }
-  console.log(keys);
-  return keys;
-}
-
 export function keyify(input) {
   const keyify = (obj, prefix = "") =>
     Object.keys(obj).reduce((res, el) => {
@@ -39,8 +9,18 @@ export function keyify(input) {
       return [...res, prefix + el];
     }, []);
   const output = keyify(input);
+  var classes = { keys: [] };
   for (var i in output) {
-    console.log(output[i].split("|")[0]);
+    let x = output[i].split("|");
+    if (!classes.keys.includes(x[0])) {
+      classes.keys.push(x[0]);
+      classes[x[0]] = [];
+      console.log("x[0]: " + x[0] + " x: " + x);
+    } else {
+      console.log("x != x! " + x);
+      classes[x.shift()].push(x);
+    }
   }
+  console.log("classes: " + JSON.stringify(classes));
   return output;
 }
