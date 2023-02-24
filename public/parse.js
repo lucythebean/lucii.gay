@@ -39,7 +39,7 @@ export function keyify(input) {
       return [...res, prefix + el];
     }, []);
   const output = keyify(input);
-  for (i in output) {
+  for (var i in output) {
     console.log(output[i].split("|")[0]);
   }
   return output;
