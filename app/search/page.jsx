@@ -1,11 +1,10 @@
 //Will be the page for inputting searches :3
 "use client";
 import { useState } from "react";
-import React from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
 
-export default function searchForm() {
+export default function SearchForm() {
   const [folder, setFolder] = useState("");
   const [query, setQuery] = useState("");
   function search(e) {
@@ -17,13 +16,13 @@ export default function searchForm() {
       };
 
       const response = await fetch("/api/searchGenshin", {
-        method: "GET",
+        method: "POST",
         body: JSON.stringify(data),
       });
       return response.json();
     };
     postData().then((data) => {
-      console.log("data.paths: " + JSON.stringify(data.paths));
+      console.log("data.paths: " + JSON.stringify(data.keys));
     });
   }
   return (

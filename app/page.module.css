@@ -27,15 +27,15 @@
 }
 
 .description p {
+  margin: 0.5rem 0px 0.5rem 0px;
   box-sizing: border-box;
   position: relative;
   align-self: self-start;
   padding: 1rem;
   background-color: rgba(238, 240, 241, 0.5);
-  border: 1px solid rgba(172, 175, 175, 0.3);
   border-radius: var(--border-radius);
   min-width: 66%;
-  
+
 }
 
 .description img {
@@ -56,7 +56,7 @@
 
 }
 
-.grid div{
+.grid div {
   box-sizing: inherit;
   display: table-cell;
   padding: 0.5rem 0.7rem;
@@ -67,16 +67,17 @@
   min-width: 33%;
 }
 
-.grid div:hover{
+.grid div:hover {
   background: var(--card-rgb-hover);
   border: 5px solid var(--card-border-rgb-hover);
 }
 
-.grid div:focus::before{
+.grid div:focus::before {
   background: var(--card-rgb-hover);
   border: 5px solid var(--card-border-rgb-hover);
 }
-.grid div::before{
+
+.grid div::before {
   pointer-events: none;
 }
 
@@ -93,7 +94,7 @@
 }
 
 /* The point where the default layout's text box is longer then the picture */
-@media screen and (max-width:950px){
+@media screen and (max-width:950px) {
   .header {
     width: 80%;
     display: inherit;
@@ -124,8 +125,7 @@
     margin: 0.5rem;
   }
 
-  .description p{
-    float: none;
+  .description p {
     box-sizing: border-box;
     position: relative;
     align-self: flex-start;
@@ -133,20 +133,19 @@
     padding: 1rem;
     min-width: 80%;
     background-color: unset;
-    border: 0;
-    border-radius: 0;
   }
 }
 
-@media screen and (max-width: 950px) and (min-width: 629px){
+@media screen and (max-width: 1070px) and (min-width: 629px) {
   .grid {
     display: inline-table;
     table-layout: fixed;
     border-spacing: 0.5rem;
     box-sizing: border-box;
     width: 80%;
-  } 
-  .grid div{
+  }
+
+  .grid div {
     display: table-cell;
     position: relative;
     box-sizing: inherit;
@@ -155,12 +154,13 @@
     min-width: unset;
     width: 100%;
   }
-  .grid h2{
+
+  .grid h2 {
     margin: 0;
   }
 }
 
-@media screen and (max-width: 630px){
+@media screen and (max-width: 630px) {
   .grid {
     display: flex;
     flex-direction: column;
@@ -168,8 +168,9 @@
     border-spacing: 0.5rem;
     box-sizing: border-box;
     max-width: 80%;
-  } 
-  .grid div{
+  }
+
+  .grid div {
     margin: 0.2rem;
     position: relative;
     box-sizing: inherit;
@@ -182,21 +183,43 @@
   }
 }
 
-@media screen and (min-width: 900px){
-  .description img{
+@media screen and (min-width: 900px) {
+  .description img {
     height: unset;
     max-height: 50%;
   }
 }
 
-@media screen and (max-width: 780px){
-  .grid{
+@media screen and (max-width: 700px) {
+  .grid {
     font-size: 10px;
   }
 
-  .description p{
-    font-size: 14px;
+  .description p {
+    font-size: 15px;
     padding: 0.5rem;
     padding-bottom: 0rem;
+  }
+}
+
+@media screen and (max-width: 701px) {
+  .grid {
+    font-size: 12px;
+  }
+
+  .description p {
+    font-size: 16px;
+    padding: 0.5rem;
+    padding-bottom: 0rem;
+  }
+}
+
+@media screen and (min-width: 800px) and (max-width:1200px) {
+  .description {
+    min-width: 70%;
+  }
+
+  .description img {
+    min-height: 50%;
   }
 }

@@ -1,8 +1,8 @@
 /* Parse a json */
 
-export function keyify(input) {
-  const keyify = (obj, prefix = "") =>
-    Object.keys(obj).reduce((res, el) => {
+export default function keyify(input: object): object {
+  const keyify = (obj: any, prefix = "") =>
+    Object.keys(obj).reduce((res, el): any[] => {
       if (typeof obj[el] === "object" && obj[el] !== null) {
         return [...res, ...keyify(obj[el], prefix + el + "|")];
       }
@@ -15,12 +15,9 @@ export function keyify(input) {
     if (!classes.keys.includes(x[0])) {
       classes.keys.push(x[0]);
       classes[x[0]] = [];
-      console.log("x[0]: " + x[0] + " x: " + x);
     } else {
-      console.log("x != x! " + x);
       classes[x.shift()].push(x);
     }
   }
-  console.log("classes: " + JSON.stringify(classes));
-  return output;
+  return classes;
 }
