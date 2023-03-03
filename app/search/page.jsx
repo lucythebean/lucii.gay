@@ -22,7 +22,7 @@ export default function SearchForm() {
       return response.json();
     };
     postData().then((data) => {
-      console.log("data.paths: " + JSON.stringify(data.keys));
+      alert(JSON.stringify(data.keys));
     });
   }
   return (
