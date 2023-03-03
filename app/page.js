@@ -4,7 +4,6 @@ import Link from "next/link";
 import { searchFolder } from "genshin-db";
 
 export default function Home() {
-  console.log(searchFolder("char", "eula", { matchCategories: true }));
   return (
     <main className={styles.main}>
       <div className={styles.header}>
@@ -41,8 +40,10 @@ export default function Home() {
           <p> ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo</p>
         </div>
         <div>
-          <h2>Header 3 test</h2>
-          <p>Span test (lie)</p>
+          <Link href="/results">
+            <h2>Testing [Results]</h2>
+            <p>Click to find out if I I made this yet!</p>
+          </Link>
         </div>
       </div>
     </main>

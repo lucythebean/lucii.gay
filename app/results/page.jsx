@@ -1,32 +1,33 @@
 "use client";
-export default function render() {
-  const display = async () => {
-    const data = {
-      folder: "character",
-      query: "eula",
-    };
-    const response = await fetch("/api/searchGenshin", {
-      method: "POST",
-      body: JSON.stringify(data),
-    });
-    return response.json();
-  };
-  display().then((data) => {
-    for (var i in data.keys) {
-      const header = document.getElementById("terms");
-      header.appendChild(
-        (title = () => {
-          let title = document.createElement("h1");
-          title.innerText(data.keys[i]);
-          return title;
-        })
+import { useEffect } from "react";
+
+export default function Render() {
+  useEffect(() => {
+    async function display() {
+      console.log("display called!");
+      const data = {
+        folder: "character",
+        query: "eula",
+      };
+      const response = await fetch(
+        "/api/searchGenshin?" + new URLSearchParams(data)
       );
-      for (let o in data[data.keys[i]]) {
-        const el = document.createElement("p");
-        el.innerText = data[data.keys[i]][o];
-        header.appendChild(el);
-      }
+      return response.json();
     }
+    display().then((data) => {
+      for (var i in data.keys) {
+        var header = document.getElementById("terms");
+        let title = document.createElement("h1");
+        title.innerHTML = data.keys[i];
+        header.appendChild(title);
+
+        for (let o in data[data.keys[i]]) {
+          const el = document.createElement("p");
+          el.innerText = data[data.keys[i]][o];
+          header.appendChild(el);
+        }
+      }
+    });
   });
   return (
     <>
