@@ -1,8 +1,10 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Link from "next/link";
+import { searchFolder } from "genshin-db";
 
 export default function Home() {
+  console.log(searchFolder("char", "eula", { matchCategories: true }));
   return (
     <main className={styles.main}>
       <div className={styles.header}>
