@@ -28,7 +28,7 @@ export default function Render() {
         }
       }
     });
-  });
+  }, []);
   return (
     <>
       <div>

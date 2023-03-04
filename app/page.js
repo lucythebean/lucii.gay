@@ -42,7 +42,7 @@ export default function Home() {
         <div>
           <Link href="/results">
             <h2>Testing [Results]</h2>
-            <p>Click to find out if I I made this yet!</p>
+            <p>Click to find out if I made this yet!</p>
           </Link>
         </div>
       </div>
