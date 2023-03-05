@@ -1,23 +1,28 @@
 /* Parse a json */
 
 export default function keyify(input: object): object {
-  const keyify = (obj: any, prefix = "") =>
-    Object.keys(obj).reduce((res, el): any[] => {
-      if (typeof obj[el] === "object" && obj[el] !== null) {
-        return [...res, ...keyify(obj[el], prefix + el + "|")];
-      }
-      return [...res, prefix + el];
-    }, []);
-  const output = keyify(input);
-  var classes = { keys: [] };
-  for (var i in output) {
-    let x = output[i].split("|");
-    if (!classes.keys.includes(x[0])) {
-      classes.keys.push(x[0]);
-      classes[x[0]] = [];
-    } else {
-      classes[x.shift()].push(x);
+  if (Array.isArray(input)) {
+    var output = { paths: [] };
+    for (let i in input) {
+      output.paths.push(input[i]);
     }
+    return output;
+  } else {
+    const keyify = (input: object): any[] => {
+      let output = [];
+      let keys = Object.keys(input);
+      keys.forEach((element) => {
+        if (typeof input[element] === "object" && input[element] !== null) {
+          let subkeys = [];
+          subkeys.push(element, keyify(input[element]));
+          output.push(subkeys);
+          return;
+        }
+        output.push(element);
+        return;
+      });
+      return output;
+    };
+    return { keys: Object.keys(input), paths: keyify(input) };
   }
-  return classes;
 }

@@ -7,7 +7,7 @@ export default function Render() {
       console.log("display called!");
       const data = {
         folder: "character",
-        query: "eula",
+        query: "ayaka",
       };
       const response = await fetch(
         "/api/searchGenshin?" + new URLSearchParams(data)
@@ -16,16 +16,18 @@ export default function Render() {
     }
     display().then((data) => {
       for (var i in data.keys) {
-        var header = document.getElementById("terms");
+        var main = document.getElementById("main");
+        let container = document.createElement("div");
         let title = document.createElement("h1");
         title.innerHTML = data.keys[i];
-        header.appendChild(title);
+        container.appendChild(title);
 
         for (let o in data[data.keys[i]]) {
           const el = document.createElement("p");
           el.innerText = data[data.keys[i]][o];
-          header.appendChild(el);
+          container.appendChild(el);
         }
+        main.appendChild(container);
       }
     });
   }, []);
@@ -33,7 +35,7 @@ export default function Render() {
     <>
       <div>
         <h1>Results:</h1>
-        <div id="terms"></div>
+        <div id="main"></div>
       </div>
     </>
   );
