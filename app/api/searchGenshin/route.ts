@@ -7,7 +7,7 @@ export async function POST(request: Request): Promise<NextResponse> {
   console.log("folder: " + folder + " query: " + query);
   try {
     var res = {
-      main: ["Literally just one string, in an array, in an object."],
+      main: ["."],
     };
     console.log("Success! Not an error!");
   } catch (err) {
