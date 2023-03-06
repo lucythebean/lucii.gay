@@ -6,11 +6,13 @@ export async function POST(request: Request): Promise<NextResponse> {
   const { folder, query } = await request.clone().json();
   console.log("folder: " + folder + " query: " + query);
   try {
-    var res = keyify(searchFolder(folder, query, { matchCategories: true }));
+    var res = {
+      main: ["Literally just one string, in an array, in an object."],
+    };
     console.log("Success! Not an error!");
   } catch (err) {
     console.log(`Error!!! Log: ${err}`);
-    res = { keys: `ERR: Something has gone wrong! Log as follows: ${err}` };
+    res = { main: [`ERR: Something has gone wrong! Log as follows: ${err}`] };
   }
   return NextResponse.json(res);
 }
