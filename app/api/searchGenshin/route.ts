@@ -7,7 +7,7 @@ export async function POST(request: Request): Promise<NextResponse> {
   console.log("folder: " + folder + " query: " + query);
   try {
     var res = {
-      main: ["."],
+      main: keyify(searchFolder(folder,query,{matchCategories:true})),
     };
     console.log("Success! Not an error!");
   } catch (err) {
