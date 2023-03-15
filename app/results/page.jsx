@@ -1,4 +1,5 @@
 "use client";
+import { useSearchParams } from "next/navigation";
 import { useEffect } from "react";
 
 export default function Render() {
@@ -6,9 +7,9 @@ export default function Render() {
     async function display() {
       console.log("display called!");
       const data = {
-        folder: "character",
-        query: "ayaka",
-      };
+        folder: useSearchParams(folder),
+        query: useSearchParams(query)
+      }
       const response = await fetch(
         "/api/searchGenshin?" + new URLSearchParams(data)
       );

@@ -3,10 +3,21 @@
 import { useState } from "react";
 import styles from "./page.module.css";
 import Link from "next/link";
-
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 export default function SearchForm() {
   const [folder, setFolder] = useState("");
   const [query, setQuery] = useState("");
+  const router = useRouter()
+  const searchParams = useSearchParams
+  function redir() {
+    const createQueryString = () => {
+      const params = new URLSearchParams(searchParams);
+      params.set("folder", folder);
+      params.set("query", query);
+      return params.toString();
+    };
+    router.push("/results" + "?" + createQueryString(folder, query))
+  }
   function search(e) {
     e.preventDefault();
     const postData = async () => {
@@ -21,8 +32,8 @@ export default function SearchForm() {
       });
       return response.json();
     };
-    postData().then((data) => {
-      alert(data.main);
+    postData().then(async (data) => {
+      alert(data.keys)
     });
   }
   return (
@@ -52,7 +63,8 @@ export default function SearchForm() {
           <h1>STILL WORKING ON THIS ONE :3</h1>
           <Link href="/">
             <button>Back to homepage!</button>
-          </Link>
+          </Link><br />
+          <button onClick={redir}>Make a redirect request!</button>
         </div>
       </div>
     </>
