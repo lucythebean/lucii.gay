@@ -4,7 +4,7 @@ import { useEffect } from "react";
 
 export default function Render() {
   useEffect(() => {
-    async function display() {
+    async function Display() {
       console.log("display called!");
       const data = {
         folder: useSearchParams(folder),
@@ -15,7 +15,7 @@ export default function Render() {
       );
       return response.json();
     }
-    display().then((data) => {
+    Display().then((data) => {
       for (var i in data.keys) {
         var main = document.getElementById("main");
         let container = document.createElement("div");
