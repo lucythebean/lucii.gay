@@ -17,11 +17,7 @@ export default function SearchForm() {
       return params.toString();
     };
     let params = createQueryString(folder, query);
-    const run = async () => {
-      await fetch('/api/searchGenshin?' + params);
       router.push('/results' + '?' + params);
-    };
-    run();
   }
   function search(e) {
     e.preventDefault();

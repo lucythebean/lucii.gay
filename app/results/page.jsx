@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 
 export default function Render() {
   let params = useSearchParams();
+  console.log(params.get('key'))
   let folder = params.get('folder');
   let query = params.get('query');
   useEffect(() => {
