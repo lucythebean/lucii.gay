@@ -6,7 +6,7 @@ import styles from './page.module.css'
 import Link from 'next/link';
 
 
-export default function searchForm(){
+export default function SearchForm(){
     const [folder, setFolder] = useState('');
     const [query, setQuery] = useState('');
     function search(e) {
