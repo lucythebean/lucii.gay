@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 
 export default function Render() {
   let params = useSearchParams();
-  console.log(params.get('key'))
+  console.log(params.get('key'));
   let folder = params.get('folder');
   let query = params.get('query');
   useEffect(() => {
@@ -23,10 +23,9 @@ export default function Render() {
         let title = document.createElement('h1');
         title.innerHTML = data.keys[i];
         container.appendChild(title);
-
-        for (let o in data[data.keys[i]]) {
-          const el = document.createElement('p');
-          el.innerText = data[data.keys[i]][o];
+        for (let o in data.paths) {
+          let el = document.createElement('p');
+          el.innerHTML = data.paths[i][o];
           container.appendChild(el);
         }
         main.appendChild(container);
