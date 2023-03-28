@@ -17,7 +17,7 @@ export default function SearchForm() {
       return params.toString();
     };
     let params = createQueryString(folder, query);
-      router.push('/results' + '?' + params);
+    router.push('/results' + '?' + params);
   }
   function search(e) {
     e.preventDefault();
@@ -33,10 +33,8 @@ export default function SearchForm() {
       });
       return response.json();
     };
-    postData().then((data) => {
+    postData().then(data => {
       alert(data.paths);
-    postData().then(async data => {
-      alert(data.keys);
     });
   }
   return (
