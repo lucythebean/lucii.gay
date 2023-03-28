@@ -1,12 +1,24 @@
 //Will be the page for inputting searches :3
-"use client";
-import { useState } from "react";
-import styles from "./page.module.css";
-import Link from "next/link";
-
+'use client';
+import { useState } from 'react';
+import styles from './page.module.css';
+import Link from 'next/link';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 export default function SearchForm() {
-  const [folder, setFolder] = useState("");
-  const [query, setQuery] = useState("");
+  const [folder, setFolder] = useState('');
+  const [query, setQuery] = useState('');
+  const router = useRouter();
+  const searchParams = useSearchParams;
+  function redir() {
+    const createQueryString = () => {
+      const params = new URLSearchParams(searchParams);
+      params.set('folder', folder);
+      params.set('query', query);
+      return params.toString();
+    };
+    let params = createQueryString(folder, query);
+      router.push('/results' + '?' + params);
+  }
   function search(e) {
     e.preventDefault();
     const postData = async () => {
@@ -15,14 +27,16 @@ export default function SearchForm() {
         query: query,
       };
 
-      const response = await fetch("/api/searchGenshin", {
-        method: "POST",
+      const response = await fetch('/api/searchGenshin', {
+        method: 'POST',
         body: JSON.stringify(data),
       });
       return response.json();
     };
     postData().then((data) => {
       alert(data.paths);
+    postData().then(async data => {
+      alert(data.keys);
     });
   }
   return (
@@ -35,15 +49,15 @@ export default function SearchForm() {
               type="text"
               placeholder="Folder"
               value={folder}
-              onChange={(e) => setFolder(e.target.value)}
-            />{" "}
+              onChange={e => setFolder(e.target.value)}
+            />{' '}
             <br />
             <input
               type="text"
               placeholder="Query"
               value={query}
-              onChange={(e) => setQuery(e.target.value)}
-            />{" "}
+              onChange={e => setQuery(e.target.value)}
+            />{' '}
             <br />
             <button type="submit">Submit search</button> <br />
           </div>
@@ -53,6 +67,8 @@ export default function SearchForm() {
           <Link href="/">
             <button>Back to homepage!</button>
           </Link>
+          <br />
+          <button onClick={redir}>Make a redirect request!</button>
         </div>
       </div>
     </>

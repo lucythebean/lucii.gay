@@ -3,14 +3,13 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "cross-env NODE_OPTIONS='--max-old-space-size=8192' next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
     "async": "^3.2.4",
-    "classnames": "^2.3.2",
     "eslint-config-next": "13.2.4",
     "genshin-db": "^4.3.6",
     "jsdom": "^21.1.1",

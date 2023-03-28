@@ -1,36 +1,37 @@
-"use client";
-import { useEffect } from "react";
+'use client';
+import { useSearchParams } from 'next/navigation';
+import { useEffect } from 'react';
 
 export default function Render() {
+  let params = useSearchParams();
+  console.log(params.get('key'));
+  let folder = params.get('folder');
+  let query = params.get('query');
   useEffect(() => {
-    async function display() {
-      console.log("display called!");
-      const data = {
-        folder: "character",
-        query: "ayaka",
-      };
+    async function Display() {
+      console.log(`display called with ${folder} and ${query}!`);
       const response = await fetch(
-        "/api/searchGenshin?" + new URLSearchParams(data)
+        '/api/searchGenshin?' +
+          new URLSearchParams({ folder: folder, query: query })
       );
       return response.json();
     }
-    display().then((data) => {
+    Display().then(data => {
       for (var i in data.keys) {
-        var main = document.getElementById("main");
-        let container = document.createElement("div");
-        let title = document.createElement("h1");
+        var main = document.getElementById('main');
+        let container = document.createElement('div');
+        let title = document.createElement('h1');
         title.innerHTML = data.keys[i];
         container.appendChild(title);
-
-        for (let o in data[data.keys[i]]) {
-          const el = document.createElement("p");
-          el.innerText = data[data.keys[i]][o];
+        for (let o in data.paths) {
+          let el = document.createElement('p');
+          el.innerHTML = data.paths[i][o];
           container.appendChild(el);
         }
         main.appendChild(container);
       }
     });
-  }, []);
+  });
   return (
     <>
       <div>
