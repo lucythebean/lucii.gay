@@ -11,14 +11,14 @@
  "dependencies": {
   "async": "^3.2.4",
   "eslint-config-next": "13.3.0",
-  "genshin-db": "^4.3.6",
+  "genshin-db": "^4.3.7",
   "jsdom": "^21.1.1",
-  "next": "13.2",
+  "next": "^13.3.1-canary.4",
   "sharp": "^0.32.0"
  },
  "devDependencies": {
   "@types/node": "18.15.11",
-  "@types/react": "18.0.33",
+  "@types/react": "18.0.34",
   "turbopack": "^0.0.1"
  }
 }
