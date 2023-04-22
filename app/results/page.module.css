@@ -1,0 +1,57 @@
+.main b {
+ color: red;
+}
+
+.main {
+ display: flex;
+ justify-content: baseline;
+ font-size: 0.85rem;
+ max-width: var(--max-width);
+ width: 100%;
+ z-index: 2;
+ font-family: var(--font-mono);
+}
+.main div {
+ background-color: var(--background-hex2);
+ margin: 10px;
+ border-radius: var(--border-radius);
+ min-width: fit-content;
+ height: fit-content;
+}
+.main h1 {
+ width: 100%;
+ padding: 0.5rem;
+ font-weight: bolder;
+ position: relative;
+}
+
+.main name {
+ color: green;
+}
+
+.main p {
+ position: relative;
+ margin: 0;
+ padding: 1rem;
+ background-color: rgba(var(--callout-rgb), 0.5);
+ border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+ border-radius: var(--border-radius);
+}
+
+.main button {
+ position: relative;
+ width: 25%;
+ padding: 0.2rem;
+ margin-left: 1rem;
+ margin-top: 0.5rem;
+ margin-bottom: 0.5rem;
+ font-family: var(--font-mono);
+ font-size: 15px;
+ border: 2px solid var(--border-rgb);
+ border-radius: 5px;
+ background-color: var(--button-colour);
+}
+.main button:hover {
+ background-color: var(--button-focus-colour);
+ transition: 0.5s;
+}

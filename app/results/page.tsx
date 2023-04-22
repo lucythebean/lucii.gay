@@ -1,6 +1,7 @@
 'use client';
 import { useSearchParams } from 'next/navigation';
 import { useEffect } from 'react';
+import styles from './page.module.css';
 import recurse from '../../public/render';
 
 export default function Render() {
@@ -24,7 +25,10 @@ export default function Render() {
  return (
   <>
    <div>
-    <div id='main' />
+    <div
+     id='main'
+     className={styles.main}
+    />
    </div>
   </>
  );
