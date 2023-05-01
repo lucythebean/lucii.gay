@@ -1,5 +1,4 @@
-Nextjs version of my website :3
+lucii.gay
+dev.lucii.gay
 
-TODO:
-  NEED TO HANDLE ERRORS WITH API AND REPLY WITH JSON TO BE DISPLAYED
-  PARSE AND DISPLAY RESULTS ON ANOTHER PAGE AFTER SUCESSFUL SEARCH
+Yes the css is miserable
