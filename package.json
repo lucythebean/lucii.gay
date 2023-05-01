@@ -6,7 +6,8 @@
   "dev": "next dev",
   "build": "next build",
   "start": "next start",
-  "lint": "next lint"
+  "lint": "next lint",
+  "prod": "sudo gh repo sync --branch dev && next build && next start"
  },
  "dependencies": {
   "async": "^3.2.4",
