@@ -1,31 +1,26 @@
-import recurse from './render';
+import Recurse from './render';
 
-export default function Page({ params }) {
+export default async function Page({ params }) {
 	let folder: string = params.folder;
 	let query: string = params.query;
-	function Content() {
-		async function Request() {
-			var x: any;
-			try {
-				const response = await fetch(
-					'https://dev.lucii.gay/api/searchGenshin?' +
-						new URLSearchParams({ folder: folder, query: query })
-				);
-				const text = await response.text(); // Parse it as text
-				const data = JSON.parse(text); // Try to parse it as JSON
-				x = data;
-			} catch (err) {
-				x = "Error! Website's down lol :)";
-			}
-			return x;
+	async function getData() {
+		const res = await fetch(
+			'https://dev.lucii.gay/api/search?' +
+				new URLSearchParams({ folder: folder, query: query })
+		);
+		if (!res.ok) {
+			// This will activate the closest `error.js` Error Boundary
+			throw new Error('Failed to fetch data');
 		}
-		return recurse(Request());
+
+		return res.json();
 	}
+
+	const data = await getData();
+	const content = Recurse(data);
 	return (
 		<>
-			<div>
-				<Content />
-			</div>
+			<div>{content}</div>
 		</>
 	);
 }
