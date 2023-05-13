@@ -1,4 +1,4 @@
-import caps from './caps';
+import caps from '../app/caps';
 
 export default function recurse(
 	data: object,

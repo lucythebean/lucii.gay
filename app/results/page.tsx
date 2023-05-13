@@ -12,8 +12,7 @@ export default function Render() {
 		async function Display() {
 			console.log(`display called with ${folder} and ${query}!`);
 			const response = await fetch(
-				'/api/searchGenshin?' +
-					new URLSearchParams({ folder: folder, query: query })
+				'/api/search?' + new URLSearchParams({ folder: folder, query: query })
 			);
 			return response.json();
 		}
