@@ -21,9 +21,11 @@ export default function Home() {
           </Link>
         </div>
         <div>
+									<Link href='https://dev.lucii.gay'>
           <h2>More testing</h2>
           <p> ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo</p>
-        </div>
+        </Link>
+								</div>
         <div>
           <h2>Header 3 test</h2>
           <p>Span test (lie)</p>
