@@ -2,4 +2,4 @@ TODO
 - Beautify/CSS for /search page
 - Beautify/Formatting/CSS for /results page
 - Fix home page scaling being wrong on larger resolutions (+1250 width,ish)
--
+- 
