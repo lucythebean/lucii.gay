@@ -1,0 +1,22 @@
+on:
+  push:
+    branches:
+      - dev
+      
+run-name: 'SSH redeploy :)'    
+  
+name: remote ssh command
+jobs:
+
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v0.1.10
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        port: ${{ secrets.PORT }}
+        script: echo ${{ secrets.PASSWORD }} | sudo -S pm2 restart dev.lucii.gay
