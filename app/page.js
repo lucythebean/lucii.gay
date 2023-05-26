@@ -42,10 +42,7 @@ export default function Home() {
 				<div>
 					<Link href='/results?folder=weapons&query=homa'>
 						<h2>Testing [Results]</h2>
-						<p>
-							Click to find out if I made this yet! Currently defaults to "character,
-							eula" if not used with the search page!
-						</p>
+						<p>Click to find out if I made this yet!</p>
 					</Link>
 				</div>
 			</div>

@@ -1,4 +1,5 @@
 import Recurse from './render';
+import style from './page.module.css';
 
 export default async function Page({ params }) {
 	let folder: string = params.folder;
@@ -9,10 +10,8 @@ export default async function Page({ params }) {
 				new URLSearchParams({ folder: folder, query: query })
 		);
 		if (!res.ok) {
-			// This will activate the closest `error.js` Error Boundary
 			throw new Error('Failed to fetch data');
 		}
-
 		return res.json();
 	}
 
@@ -20,7 +19,7 @@ export default async function Page({ params }) {
 	const content = Recurse(data);
 	return (
 		<>
-			<div>{content}</div>
+			<div className={style.main}>{content}</div>
 		</>
 	);
 }

@@ -1,0 +1,42 @@
+.main {
+	display: inline flow-root;
+	--border-radius: 8px;
+	font-size: large;
+	margin: 10px;
+	border-radius: var(--border-radius);
+	font-family: var(--font-mono);
+	width: 100%;
+}
+.main * {
+	display: flex;
+	padding: 5px;
+}
+
+.main p {
+	color: #0c061e;
+	width: 50%;
+	background-color: var(--accent);
+	border-radius: var(--border-radius);
+}
+
+.main li div {
+	display: flex;
+	width: 50%;
+}
+.main li div p {
+	width: fit-content;
+}
+.main ul {
+	display: block;
+}
+
+.image {
+	position: relative;
+	display: block;
+}
+.image img {
+	object-fit: contain;
+	width: 100%;
+	height: auto;
+	margin: 2px;
+}
