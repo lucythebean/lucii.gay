@@ -1,0 +1,19 @@
+on:
+  push:
+    branches:
+      - master
+      
+run-name: 'pm2 redeploy :)'    
+  
+name: repo sync, build and restart nextjs process.
+jobs:
+
+  build:
+    if: github.actor == 'lucythebean'
+    name: Build
+    runs-on: self-hosted
+    steps:
+      - name: repo sync
+        run: (cd /home/lucy/main.lucii.gay; gh repo sync;)
+      - name: pm2 restart
+        run: (cd /home/lucy/main.lucii.gay; pm2 restart main.lucii.gay; tail --lines 30 /home/lucy/.pm2/logs/main.lucii.gay-out.log)
