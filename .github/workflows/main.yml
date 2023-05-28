@@ -10,13 +10,16 @@ jobs:
 
   build:
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
-    - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@v0.1.10
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: ${{ secrets.PORT }}
-        script: echo ${{ secrets.PASSWORD }} | sudo -S pm2 restart dev.lucii.gay
+      - name: testing the runner :)
+        run: ls /home/lucy/
+    #steps:
+    #- name: executing remote ssh commands using password
+    #  uses: appleboy/ssh-action@v0.1.10
+    #  with:
+    #    host: ${{ secrets.HOST }}
+    #    username: ${{ secrets.USERNAME }}
+    #    key: ${{ secrets.SSH_PRIVATE_KEY }}
+    #    port: ${{ secrets.PORT }}
+    #    script: echo ${{ secrets.PASSWORD }} | sudo -S pm2 restart dev.lucii.gay
