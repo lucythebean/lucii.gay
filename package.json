@@ -1,25 +1,25 @@
 {
- "name": "next_test",
- "version": "0.2.0",
- "private": true,
- "scripts": {
-  "dev": "next dev",
-  "build": "next build",
-  "start": "next start",
-  "lint": "next lint",
-  "prod": "sudo gh repo sync --branch dev && next build && next start -- -p 4000"
- },
- "dependencies": {
-  "async": "^3.2.4",
-  "eslint-config-next": "13.4.4",
-  "genshin-db": "^4.3.8",
-  "jsdom": "^22.0.0",
-  "next": "^13.4.4",
-  "sharp": "^0.32.1"
- },
- "devDependencies": {
-  "@types/node": "20.2.4",
-  "@types/react": "18.2.7",
-  "turbopack": "^0.0.1"
- }
+	"name": "next_test",
+	"version": "0.2.0",
+	"private": true,
+	"scripts": {
+		"dev": "next dev",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint",
+		"prod": "next build && next start -- -p 4000"
+	},
+	"dependencies": {
+		"async": "^3.2.4",
+		"eslint-config-next": "13.4.4",
+		"genshin-db": "^4.3.8",
+		"jsdom": "^22.0.0",
+		"next": "^13.4.4",
+		"sharp": "^0.32.1"
+	},
+	"devDependencies": {
+		"@types/node": "20.2.4",
+		"@types/react": "18.2.7",
+		"turbopack": "^0.0.1"
+	}
 }
