@@ -3,20 +3,17 @@ on:
     branches:
       - dev
       
-run-name: 'SSH redeploy :)'    
+run-name: 'pm2 redeploy :)'    
   
-name: remote ssh command
+name: repo sync, build and restart nextjs process.
 jobs:
 
   build:
+    if: github.actor == 'lucythebean'
     name: Build
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
-    - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@v0.1.10
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.SSH_PRIVATE_KEY }}
-        port: ${{ secrets.PORT }}
-        script: echo ${{ secrets.PASSWORD }} | sudo -S pm2 restart dev.lucii.gay
+      - name: repo sync
+        run: (cd /home/lucy/dev.lucii.gay; gh repo sync -b dev;)
+      - name: pm2 restart
+        run: (cd /home/lucy/dev.lucii.gay; pm2 restart dev.lucii.gay; tail --lines 30 /home/lucy/.pm2/logs/dev.lucii.gay-out.log)
