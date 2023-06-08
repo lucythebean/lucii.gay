@@ -7,36 +7,34 @@
 	font-family: var(--font-mono);
 	width: 100%;
 }
-.main * {
-	display: flex;
-	padding: 5px;
-}
 
+.main div {
+	width: 50%;
+	display: block;
+}
 .main p {
-	color: #0c061e;
+	padding: 5px;
+	color: var(--primary);
 	width: 50%;
 	background-color: var(--accent);
 	border-radius: var(--border-radius);
 }
 
-.main li div {
-	display: flex;
-	width: 50%;
-}
-.main li div p {
-	width: fit-content;
-}
 .main ul {
 	display: block;
 }
 
-.image {
-	position: relative;
-	display: block;
+.main ul li {
+	color: red;
 }
-.image img {
-	object-fit: contain;
-	width: 100%;
-	height: auto;
-	margin: 2px;
+
+.main img {
+	align-self: flex-start;
+	max-width: 25%;
+	max-height: 25%;
+}
+div.images {
+	display: inline-flexbox;
+	width: 50%;
+	float: right;
 }

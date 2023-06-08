@@ -1,9 +1,9 @@
+/* eslint-disable @next/next/no-img-element */
+import Link from 'next/link';
 import caps from '../../../caps';
-import Image from 'next/image';
 import style from '../[query]/page.module.css';
-import { url } from 'inspector';
 
-export default function Recurse(data: object, context = [], note: any = false) {
+export default function Recurse(data: object, context = []) {
 	let elements = [];
 	Object.keys(data).forEach(i => {
 		const element = data[i];
@@ -16,6 +16,27 @@ export default function Recurse(data: object, context = [], note: any = false) {
 				elements.push(<ul id={i}>{subKeys}</ul>);
 				return;
 			}
+			if (i === 'images') {
+				let subElements = [];
+				for (let subElement in element) {
+					if (element[subElement].toString().includes('https://')) {
+						subElements.push(
+							<img
+								src={element[subElement]}
+								alt={subElement}
+							/>
+						);
+					}
+				}
+				context.unshift(
+					<div
+						id={i}
+						className={style.images}>
+						{subElements}
+					</div>
+				);
+				return;
+			}
 			elements.push(
 				<div id={i}>
 					{isNaN(+i) ? <b>{caps(i)}</b> : null}
@@ -25,17 +46,14 @@ export default function Recurse(data: object, context = [], note: any = false) {
 			return;
 		}
 		elements.push(
-			element.toString().includes('https://') && i !== 'fandom' ? (
-				<div className={style.image}>
-					<Image
-						id={i}
-						src={element}
-						alt={i}
-						fill={true}
-					/>
-				</div>
+			i === 'fandom' ? (
+				<p>
+					<Link href={element}>{element}</Link>
+				</p>
 			) : (
-				<p>{element}</p>
+				<p>
+					{caps(i)}: {element}
+				</p>
 			)
 		);
 	});
