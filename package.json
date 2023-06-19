@@ -11,15 +11,15 @@
 	},
 	"dependencies": {
 		"async": "^3.2.4",
-		"eslint-config-next": "13.4.4",
-		"genshin-db": "^4.3.8",
-		"jsdom": "^22.0.0",
-		"next": "^13.4.4",
+		"eslint-config-next": "13.4.6",
+		"genshin-db": "^4.3.9",
+		"jsdom": "^22.1.0",
+		"next": "^13.4.6",
 		"sharp": "^0.32.1"
 	},
 	"devDependencies": {
-		"@types/node": "20.2.4",
-		"@types/react": "18.2.7",
+		"@types/node": "20.3.1",
+		"@types/react": "18.2.12",
 		"turbopack": "^0.0.1"
 	}
 }
