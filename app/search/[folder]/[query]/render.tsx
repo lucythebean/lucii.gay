@@ -51,9 +51,7 @@ export default function Recurse(data: object, context = []) {
 					<Link href={element}>{element}</Link>
 				</p>
 			) : (
-				<p>
-					{caps(i)}: {element}
-				</p>
+				<p>{`${caps(i)}: ${element}`}</p>
 			)
 		);
 	});

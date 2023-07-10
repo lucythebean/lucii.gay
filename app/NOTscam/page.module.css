@@ -1,0 +1,32 @@
+.main {
+	position: fixed;
+	display: grid;
+	align-items: center;
+	top: 50%;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+}
+.main h1 {
+	font-size: 2vw;
+	text-align: center;
+}
+.arrow {
+	color: black;
+	font-size: larger;
+}
+.main b {
+	color: red;
+}
+
+.main button {
+	font-size: 1vw;
+	width: 30%;
+	margin-top: 20px;
+	margin-left: 35%;
+}
+.main p {
+	width: 30%;
+	margin-top: 20px;
+	margin-left: 35%;
+}

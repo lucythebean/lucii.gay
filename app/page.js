@@ -27,24 +27,25 @@ export default function Home() {
 				</p>
 			</div>
 			<div className={styles.grid}>
-				<div>
-					<Link href='/search'>
-						<h2>Search</h2>
+				<Link href='/search'>
+					<button>
+						<b>Search</b>
 						<p>Parse yourself some Genshin api (Work in progress lol)</p>
-					</Link>
-				</div>
-				<div>
-					<Link href='/search/character/eula'>
-						<h2>More testing</h2>
+					</button>
+				</Link>
+				<Link href='/search/character/eula'>
+					<button>
+						<b>More testing</b>
 						<p> ooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo</p>
-					</Link>
-				</div>
-				<div>
-					<Link href='/results?folder=weapons&query=homa'>
-						<h2>Testing [Results]</h2>
-						<p>Click to find out if I made this yet!</p>
-					</Link>
-				</div>
+					</button>
+				</Link>
+				<Link href='/results?folder=weapons&query=homa'>
+					<button>
+						<b>Testing [Results]</b>
+						<br />
+						Click to find out if I made this yet!
+					</button>
+				</Link>
 			</div>
 		</main>
 	);
