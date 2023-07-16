@@ -13,6 +13,6 @@ jobs:
   runs-on: self-hosted
   steps:
    - name: repo sync
-     run: (cd /home/lucy/main.lucii.gay; gh repo sync;)
+     run: (cd /home/lucy/lucii.gay; gh repo sync;)
    - name: pm2 restart
-     run: (cd /home/lucy/main.lucii.gay; pm2 restart main.lucii.gay; tail --lines 30 /home/lucy/.pm2/logs/main.lucii.gay-out.log)
+     run: (cd /home/lucy/lucii.gay; pm2 restart lucii.gay; tail --lines 30 /home/lucy/.pm2/logs/lucii.gay-out.log)
