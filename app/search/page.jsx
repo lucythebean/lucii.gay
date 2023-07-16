@@ -3,22 +3,14 @@
 import { useState } from 'react';
 import styles from './page.module.css';
 import Link from 'next/link';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 export default function SearchForm() {
 	const [folder, setFolder] = useState('');
 	const [query, setQuery] = useState('');
 	const router = useRouter();
-	const searchParams = useSearchParams;
 	function search(e) {
 		e.preventDefault();
-		const createQueryString = () => {
-			const params = new URLSearchParams(searchParams);
-			params.set('folder', folder);
-			params.set('query', query);
-			return params.toString();
-		};
-		let params = createQueryString();
-		router.push('/results' + '?' + params);
+		router.push(`/search/${folder}/${query}`);
 	}
 	return (
 		<>

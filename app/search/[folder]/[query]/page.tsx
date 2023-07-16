@@ -6,7 +6,7 @@ export default async function Page({ params }) {
 	let query: string = params.query;
 	async function getData() {
 		const res = await fetch(
-			'https://dev.lucii.gay/api/search?' +
+			'https://lucii.gay/api/search?' +
 				new URLSearchParams({ folder: folder, query: query })
 		);
 		if (!res.ok) {

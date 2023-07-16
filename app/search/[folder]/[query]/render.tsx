@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
-import caps from '../../../caps';
+import caps from '../../../../public/caps';
 import style from '../[query]/page.module.css';
 
 export default function Recurse(data: object, context = []) {

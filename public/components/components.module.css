@@ -1,0 +1,36 @@
+.sidebar {
+	background-color: var(--primary);
+	width: 20vw;
+	height: 100vh;
+	display: grid;
+	gap: 0px;
+}
+
+.menu {
+	width: min-content;
+	height: min-content;
+	margin-top: 5vw;
+	margin-left: auto;
+	margin-right: 0;
+}
+
+.menuButton {
+	background-color: var(--primary);
+	border: var(--primary);
+	border-left-width: 20px;
+	border-left-style: solid;
+	border-bottom-left-radius: 8px;
+	border-top-left-radius: 8px;
+	width: 15vw;
+	height: 2vw;
+	margin-bottom: 1vw;
+	text-align: left;
+	font-size: 25px;
+}
+
+
+.menuButton:hover {
+	background: var(--secondary);
+	border-color: var(--secondary);
+	transition: 0.2s;
+}

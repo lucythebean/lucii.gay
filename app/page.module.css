@@ -1,183 +1,38 @@
 .main {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding-top: 1rem;
-	width: 100%;
+	position: relative;
+	font-size: 16px;
+	background-color: var(--background);
+	height: 100vh;
+	width: 80vw;
+	margin: 0
 }
 
 .header {
-	display: inherit;
-	justify-content: center;
-	border-bottom: 5px solid var(--button-primary);
-	padding-bottom: 0.5rem;
-	margin-bottom: 0.5rem;
-	font-weight: bolder;
+	margin-top: 5vw;
+	width: 30vw;
+	background-color: var(--secondary);
+	border: var(--secondary);
+	border-right-width: 20px;
+	border-right-style: solid;
+	border-bottom-right-radius: 8px;
+	border-top-right-radius: 8px;
+	height: 2vw;
+	font-size: 25px
 }
 
-.description {
-	display: flex;
-	max-width: 50%;
-	z-index: 2;
-	border-bottom: 5px solid var(--primary);
-	margin-bottom: 5px;
-	font-size: 16px;
+.header h3 {
+	width: fit-content;
+	margin-left: auto;
+	margin-right: 0;
+	margin-bottom: 0;
+	margin-top: auto;
+	padding-top: 3px;
 }
 
-.description p {
-	margin: 0.5rem 0px 0.5rem 0px;
-	box-sizing: border-box;
-	position: relative;
-	align-self: self-start;
-	padding: 1rem;
-	background-color: var(--accent);
-	border-radius: var(--border-radius);
-	min-width: 66%;
-}
-
-.description img {
-	border-radius: var(--border-radius);
-	position: relative;
-	margin: 0.5rem;
-	min-width: 33%;
-	height: auto;
-}
-
-.grid {
-	width: var(--max-width);
-	min-width: 50%;
-	display: table;
-	border-spacing: 0.5rem;
-	box-sizing: border-box;
-	table-layout: fixed;
-}
-
-/* The point where the default layout's text box is longer then the picture */
-@media screen and (max-width: 950px) {
-	.header {
-		width: 80%;
-		display: inherit;
-		justify-content: center;
-		border-bottom: 5px solid var(--button-primary);
-		padding-bottom: 0.5rem;
-		margin-bottom: 0.5rem;
-		font-weight: bolder;
-		font-size: 16px;
-	}
-
-	.description {
-		display: block;
-		min-width: 80%;
-		background-color: var(--accent);
-		border: 1px solid var(--null);
-		border-radius: var(--border-radius);
-	}
-
-	.description img {
-		box-sizing: content-box;
-		border-radius: var(--border-radius);
-		position: relative;
-		float: left;
-		min-width: 33vw;
-		max-width: 33vw;
-		height: auto;
-		margin: 0.5rem;
-	}
-
-	.description p {
-		box-sizing: border-box;
-		position: relative;
-		align-self: flex-start;
-		margin: 0.5rem;
-		padding: 1rem;
-		min-width: 80%;
-		background-color: unset;
-	}
-}
-
-@media screen and (max-width: 1070px) and (min-width: 629px) {
-	.grid {
-		display: inline-table;
-		table-layout: fixed;
-		border-spacing: 0.5rem;
-		box-sizing: border-box;
-		width: 80%;
-	}
-
-	.grid div {
-		display: table-cell;
-		position: relative;
-		box-sizing: inherit;
-		padding: 0.5rem 0.7rem;
-		transition: 200ms;
-		min-width: unset;
-		width: 100%;
-	}
-
-	.grid h2 {
-		margin: 0;
-	}
-}
-
-@media screen and (max-width: 630px) {
-	.grid {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		border-spacing: 0.5rem;
-		box-sizing: border-box;
-		max-width: 80%;
-	}
-
-	.grid div {
-		margin: 0.2rem;
-		position: relative;
-		box-sizing: inherit;
-		padding: 0.5rem 0.7rem;
-		border-radius: var(--border-radius);
-		border: 5px solid;
-		transition: 200ms;
-		min-width: unset;
-	}
-}
-
-@media screen and (min-width: 900px) {
-	.description img {
-		height: unset;
-		max-height: 50%;
-	}
-}
-
-@media screen and (max-width: 700px) {
-	.grid {
-		font-size: 10px;
-	}
-
-	.description p {
-		font-size: 15px;
-		padding: 0.5rem;
-		padding-bottom: 0rem;
-	}
-}
-
-@media screen and (max-width: 701px) {
-	.grid {
-		font-size: 12px;
-	}
-
-	.description p {
-		font-size: 16px;
-		padding: 0.5rem;
-		padding-bottom: 0rem;
-	}
-}
-
-@media screen and (min-width: 800px) and (max-width: 1200px) {
-	.description {
-		min-width: 70%;
-	}
-
-	.description img {
-		min-height: 50%;
-	}
+img.image {
+	position: fixed;
+	left: 80vw;
+	top: 10vh;
+	margin-right: auto;
+	margin-left: 0;
 }
