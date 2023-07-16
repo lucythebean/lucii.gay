@@ -7,17 +7,17 @@
 		"build": "next build",
 		"start": "next start",
 		"lint": "next lint",
-		"prod": "next build && next start -- -p 4000"
+		"prod": "next build && next start -- -p 3000"
 	},
 	"dependencies": {
 		"async": "^3.2.4",
-		"eslint-config-next": "^13.4.9",
+		"eslint-config-next": "^13.4.10",
 		"eslint-plugin-jsx-a11y": "^6.7.1",
 		"eslint-plugin-react": "^7.32.2",
 		"genshin-db": "^4.3.11",
 		"jsdom": "^22.1.0",
-		"next": "^13.4.9",
-		"sharp": "^0.32.2"
+		"next": "^13.4.10",
+		"sharp": "^0.32.3"
 	},
 	"devDependencies": {
 		"@types/node": "20.4.2",
