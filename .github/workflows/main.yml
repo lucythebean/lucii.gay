@@ -1,7 +1,7 @@
 on:
  push:
   branches:
-   - dev
+   - master
 
 run-name: 'pm2 redeploy :)'
 
@@ -13,6 +13,6 @@ jobs:
   runs-on: self-hosted
   steps:
    - name: repo sync
-     run: (cd /home/lucy/dev.lucii.gay; gh repo sync -b dev;npm i;)
+     run: (cd /home/lucy/main.lucii.gay; gh repo sync;)
    - name: pm2 restart
-     run: (cd /home/lucy/dev.lucii.gay; pm2 restart dev.lucii.gay; tail --lines 30 /home/lucy/.pm2/logs/dev.lucii.gay-out.log)
+     run: (cd /home/lucy/main.lucii.gay; pm2 restart main.lucii.gay; tail --lines 30 /home/lucy/.pm2/logs/main.lucii.gay-out.log)
