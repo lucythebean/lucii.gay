@@ -28,7 +28,6 @@
 	font-size: 25px;
 }
 
-
 .menuButton:hover {
 	background: var(--secondary);
 	border-color: var(--secondary);

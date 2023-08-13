@@ -1,43 +1,30 @@
 .main {
-	display: inherit;
-	justify-content: inherit;
-	align-items: inherit;
-	font-size: 0.85rem;
-	max-width: var(--max-width);
-	width: 100%;
-	z-index: 2;
-	font-family: var(--font-mono);
-}
-.main h1 {
-	width: 100%;
-	margin-left: 1rem;
-	margin-top: 1rem;
-	padding: 0.5rem;
-	font-weight: 900;
-	word-spacing: -5px;
-	position: relative;
+	font-size: 16px;
+	width: 80vw;
+	height: 100vh;
+	margin: 0;
+	background-color: var(--background);
 }
 
-.main p {
-	position: relative;
-	margin: 0;
-	padding: 1rem;
-	background-color: rgba(var(--accent), 0.5);
-	border: 1px solid rgba(var(--primary), 0.3);
-	border-radius: var(--border-radius);
+.header span {
+	margin-left: auto;
+	margin-right: 0;
 }
-.main input {
-	position: relative;
-	padding: 1ch;
-	margin-left: 1rem;
-	margin-bottom: 0.5rem;
-	font-family: var(--font-mono);
-	font-size: 14px;
+
+.header {
+	margin-top: 8vw;
+	width: 30vw;
+	background-color: var(--secondary);
+	border: var(--secondary);
+	border-right-width: 20px;
+	border-right-style: solid;
+	border-bottom-right-radius: 8px;
+	border-top-right-radius: 8px;
+	height: 2vw;
+}
+
+.search input {
+	width: fit-content;
 	border: 2px solid var(--primary);
 	border-radius: 8px;
-	width: 25%;
-}
-.main input:focus {
-	background-color: #c5fdff;
-	transition: 0.2s;
 }

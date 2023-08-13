@@ -5,6 +5,7 @@ const nextConfig = {
 		appDir: true,
 	},
 	images: {
+		formats: ['image/webp'],
 		remotePatterns: [
 			{
 				protocol: 'https',

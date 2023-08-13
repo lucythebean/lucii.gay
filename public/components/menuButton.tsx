@@ -20,7 +20,7 @@ export default function MenuButton({ page, to }) {
 						? { backgroundColor: 'var(--secondary)', borderColor: 'var(--secondary)' }
 						: {}
 				}>
-				<h3>{page}</h3>
+				<span id='header'>{page}</span>
 			</button>
 		</Link>
 	);
