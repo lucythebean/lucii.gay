@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from 'next/link';
-import caps from '../../../../public/caps';
+import caps from '../../../components/caps';
 import style from '../[query]/page.module.css';
 
 export default function Recurse(data: object, context = []) {
@@ -10,7 +10,7 @@ export default function Recurse(data: object, context = []) {
 		if (typeof element === 'object') {
 			let subKeys = [];
 			if (Array.isArray(element)) {
-				element.forEach(x => {
+				element.forEach(() => {
 					subKeys.push(<li>{Recurse(element)}</li>);
 				});
 				elements.push(<ul id={i}>{subKeys}</ul>);
@@ -19,11 +19,11 @@ export default function Recurse(data: object, context = []) {
 			if (i === 'images') {
 				let subElements = [];
 				for (let subElement in element) {
-					if (element[subElement].toString().includes('https://')) {
+					if (subElement.includes('name')) {
 						subElements.push(
 							<img
-								src={element[subElement]}
-								alt={subElement}
+								src={`/images/${element[subElement]}.png`}
+								alt={element[subElement]}
 							/>
 						);
 					}
