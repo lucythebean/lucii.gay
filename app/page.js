@@ -10,6 +10,7 @@ export default function Home() {
 			<Image
 				className={styles.image}
 				src='/aiOhto.webp'
+				priority={true}
 				width={196}
 				height={214}
 				alt='An "abstract" (Poorly drawn) picture of ai ohto wonder egg looking surprised'
@@ -17,6 +18,10 @@ export default function Home() {
 			<div className={styles.description}>
 				<span></span>
 			</div>
+			<Image
+				src='/LOADING....gif'
+				width={450}
+				height={74}></Image>
 		</main>
 	);
 }

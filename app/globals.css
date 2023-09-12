@@ -17,12 +17,38 @@
 html,
 body {
 	display: flex;
-	width: 100vw;
+	width: 100%;
+	height: 100%;
+	background-color: var(--background);
 }
+
+.main {
+	font-size: 16px;
+	width: 80%;
+	height: 100%;
+	margin: 0;
+	background-color: var(--background);
+}
+
+.header {
+	width: 550px;
+	background-color: var(--secondary);
+	border: var(--secondary);
+	border-right-width: 20px;
+	border-right-style: solid;
+	border-bottom-right-radius: 8px;
+	border-top-right-radius: 8px;
+	height: 40px;
+}
+
 
 span#header {
 	display: block;
 	width: fit-content;
 	font-weight: bold;
-	font-size: 1.5vw;
+	font-size: 29px;
+}
+
+.loading h1 {
+	font-size: 64px;
 }
