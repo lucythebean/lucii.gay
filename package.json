@@ -10,18 +10,18 @@
 		"prod": "next build && next start -- -p 4000"
 	},
 	"dependencies": {
-		"0g": "^0.0.9",
-		"async": "^3.2.4",
-		"eslint": "^8.49.0",
-		"genshin-db": "^4.3.14",
-		"jsdom": "^22.1.0",
-		"next": "^13.4.19",
-		"npm": "^10.1.0"
+		"0g": "0.0.9",
+		"async": "3.2.5",
+		"eslint": "8.56.0",
+		"genshin-db": "5.0.8",
+		"jsdom": "23.2.0",
+		"next": "14.0.4",
+		"npm": "10.2.5"
 	},
 	"devDependencies": {
-		"@types/node": "^20.6.0",
-		"@types/react": "18.2.21",
-		"turbopack": "^0.0.1",
-		"typescript": "5.2.2"
+		"@types/node": "^20.10.7",
+		"@types/react": "18.2.47",
+		"turbopack": "0.0.1",
+		"typescript": "^5.3.3"
 	}
 }
