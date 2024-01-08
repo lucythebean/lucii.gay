@@ -4,13 +4,53 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 export default function SearchForm() {
-	const [folder, setFolder] = useState('');
+	let categories = ['Artifacts', 'Characters', 'Materials', 'Weapons'];
+	let allCategories = [
+		'Characters',
+		'Talents',
+		'Constellations',
+		'Outfits',
+		'Weapons',
+		'Foods',
+		'Materials',
+		'Weapon material types',
+		'Talent material types',
+		'Artifacts',
+		'Domains',
+		'Enemies',
+		'Rarity',
+		'Elements',
+		'Achievements',
+		'Achievement groups',
+		'Windgliders',
+		'Animals',
+		'Namecards',
+		'Geographies',
+		'Adventure ranks',
+	];
+	const [folder, setFolder] = useState(categories[0]);
 	const [query, setQuery] = useState('');
+	const [showCategories, setShowCategories] = useState(false);
 	const router = useRouter();
-	let allOptions = ['Artifacts', 'Characters', 'Materials', 'Weapons']; //Replace with an api call for catergory options :3
-	let list = [];
-	for (let i in allOptions) {
-		list.push(<option>{allOptions[i]}</option>);
+	function listOptions(x: string[]) {
+		let list = x.map(i => <option key={i}>{i}</option>);
+		return list;
+	}
+	async function suggestResults(x: string) {
+		let list = [];
+		async function getData() {
+			const res = await fetch(
+				'https://dev.lucii.gay/api/search?' +
+					new URLSearchParams({ folder: x, query: 'names' })
+			);
+
+			if (!res.ok) {
+				throw new Error('Failed to fetch data');
+			}
+			return res.json();
+		}
+		const data = await getData();
+		return console.log(data);
 	}
 	return (
 		<form
@@ -19,22 +59,38 @@ export default function SearchForm() {
 				e.preventDefault();
 				router.push(`/search/${folder}/${query}`);
 			}}>
+			<span>
+				Show all categories
+				<input
+					type='checkbox'
+					checked={showCategories}
+					onChange={() => {
+						setShowCategories(!showCategories);
+					}}
+				/>
+			</span>
+			<br />
 			<select
-				placeholder='Folder'
 				value={folder}
 				onChange={e => {
 					setFolder(e.target.value);
 				}}
 				id='list'>
-				{list}
+				{listOptions(showCategories ? allCategories : categories)}
 			</select>
 			<br />
-			<input
-				type='text'
-				placeholder='Query'
-				value={query}
-				onChange={e => setQuery(e.target.value)}
-			/>
+			<div>
+				<input
+					type='text'
+					placeholder='Query'
+					value={query}
+					onChange={e => {
+						setQuery(e.target.value);
+						suggestResults(folder);
+					}}
+				/>
+				<ul>{}</ul>
+			</div>
 			<br />
 			<button type='submit'>Submit search</button> <br />
 		</form>

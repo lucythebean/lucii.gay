@@ -24,5 +24,3 @@ img.image {
 	outline: 5px solid var(--primary);
 	border-radius: 8px;
 }
-
-@media (orientation:portrait) {}

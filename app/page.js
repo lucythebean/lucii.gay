@@ -5,7 +5,7 @@ export default function Home() {
 	return (
 		<main className={styles.main}>
 			<div className={styles.header}>
-				<span id='header'>Lucy's internet emporium :3</span>
+				<span id='header'>You can just go get a website</span>
 			</div>
 			<Image
 				className={styles.image}
@@ -18,10 +18,6 @@ export default function Home() {
 			<div className={styles.description}>
 				<span></span>
 			</div>
-			<Image
-				src='/LOADING....gif'
-				width={450}
-				height={74}></Image>
 		</main>
 	);
 }
