@@ -74,6 +74,7 @@ export default function SearchForm() {
 				value={folder}
 				onChange={e => {
 					setFolder(e.target.value);
+					suggestResults(folder);
 				}}
 				id='list'>
 				{listOptions(showCategories ? allCategories : categories)}
@@ -86,7 +87,6 @@ export default function SearchForm() {
 					value={query}
 					onChange={e => {
 						setQuery(e.target.value);
-						suggestResults(folder);
 					}}
 				/>
 				<ul>{}</ul>
