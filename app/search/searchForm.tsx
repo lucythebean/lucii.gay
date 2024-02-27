@@ -31,6 +31,7 @@ export default function SearchForm() {
 	const [folder, setFolder] = useState(categories[0]);
 	const [query, setQuery] = useState('');
 	const [showCategories, setShowCategories] = useState(false);
+	[];
 	const router = useRouter();
 	function listOptions(x: string[]) {
 		let list = x.map(i => <option key={i}>{i}</option>);
@@ -41,7 +42,8 @@ export default function SearchForm() {
 		async function getData() {
 			const res = await fetch(
 				'https://dev.lucii.gay/api/search?' +
-					new URLSearchParams({ folder: x, query: 'names' })
+					new URLSearchParams({ folder: x, query: 'names' }),
+				{ cache: 'force-cache' }
 			);
 
 			if (!res.ok) {
@@ -52,6 +54,7 @@ export default function SearchForm() {
 		const data = await getData();
 		return console.log(data);
 	}
+	suggestResults(folder);
 	return (
 		<form
 			className={styles.search}
@@ -74,7 +77,6 @@ export default function SearchForm() {
 				value={folder}
 				onChange={e => {
 					setFolder(e.target.value);
-					suggestResults(folder);
 				}}
 				id='list'>
 				{listOptions(showCategories ? allCategories : categories)}
